@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D31753921C5D0BBC0096C5AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31753911C5D0BBC0096C5AA /* AppDelegate.swift */; };
+		D31753941C5D0BBC0096C5AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31753931C5D0BBC0096C5AA /* ViewController.swift */; };
+		D31753971C5D0BBC0096C5AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D31753951C5D0BBC0096C5AA /* Main.storyboard */; };
+		D31753991C5D0BBC0096C5AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D31753981C5D0BBC0096C5AA /* Assets.xcassets */; };
+		D317539C1C5D0BBC0096C5AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D317539A1C5D0BBC0096C5AA /* LaunchScreen.storyboard */; };
+		D31753A71C5D0BBC0096C5AA /* QaleidospaceViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31753A61C5D0BBC0096C5AA /* QaleidospaceViewerTests.swift */; };
+		D31753B21C5D0BBC0096C5AA /* QaleidospaceViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31753B11C5D0BBC0096C5AA /* QaleidospaceViewerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D31753A31C5D0BBC0096C5AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D31753861C5D0BBC0096C5AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D317538D1C5D0BBC0096C5AA;
+			remoteInfo = QaleidospaceViewer;
+		};
+		D31753AE1C5D0BBC0096C5AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D31753861C5D0BBC0096C5AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D317538D1C5D0BBC0096C5AA;
+			remoteInfo = QaleidospaceViewer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D317538E1C5D0BBC0096C5AA /* QaleidospaceViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QaleidospaceViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D31753911C5D0BBC0096C5AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D31753931C5D0BBC0096C5AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D31753961C5D0BBC0096C5AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D31753981C5D0BBC0096C5AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D317539B1C5D0BBC0096C5AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D317539D1C5D0BBC0096C5AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D31753A21C5D0BBC0096C5AA /* QaleidospaceViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QaleidospaceViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D31753A61C5D0BBC0096C5AA /* QaleidospaceViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QaleidospaceViewerTests.swift; sourceTree = "<group>"; };
+		D31753A81C5D0BBC0096C5AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D31753AD1C5D0BBC0096C5AA /* QaleidospaceViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QaleidospaceViewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D31753B11C5D0BBC0096C5AA /* QaleidospaceViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QaleidospaceViewerUITests.swift; sourceTree = "<group>"; };
+		D31753B31C5D0BBC0096C5AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D317538B1C5D0BBC0096C5AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D317539F1C5D0BBC0096C5AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D31753AA1C5D0BBC0096C5AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D31753851C5D0BBC0096C5AA = {
+			isa = PBXGroup;
+			children = (
+				D31753901C5D0BBC0096C5AA /* QaleidospaceViewer */,
+				D31753A51C5D0BBC0096C5AA /* QaleidospaceViewerTests */,
+				D31753B01C5D0BBC0096C5AA /* QaleidospaceViewerUITests */,
+				D317538F1C5D0BBC0096C5AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D317538F1C5D0BBC0096C5AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D317538E1C5D0BBC0096C5AA /* QaleidospaceViewer.app */,
+				D31753A21C5D0BBC0096C5AA /* QaleidospaceViewerTests.xctest */,
+				D31753AD1C5D0BBC0096C5AA /* QaleidospaceViewerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D31753901C5D0BBC0096C5AA /* QaleidospaceViewer */ = {
+			isa = PBXGroup;
+			children = (
+				D31753911C5D0BBC0096C5AA /* AppDelegate.swift */,
+				D31753931C5D0BBC0096C5AA /* ViewController.swift */,
+				D31753951C5D0BBC0096C5AA /* Main.storyboard */,
+				D31753981C5D0BBC0096C5AA /* Assets.xcassets */,
+				D317539A1C5D0BBC0096C5AA /* LaunchScreen.storyboard */,
+				D317539D1C5D0BBC0096C5AA /* Info.plist */,
+			);
+			path = QaleidospaceViewer;
+			sourceTree = "<group>";
+		};
+		D31753A51C5D0BBC0096C5AA /* QaleidospaceViewerTests */ = {
+			isa = PBXGroup;
+			children = (
+				D31753A61C5D0BBC0096C5AA /* QaleidospaceViewerTests.swift */,
+				D31753A81C5D0BBC0096C5AA /* Info.plist */,
+			);
+			path = QaleidospaceViewerTests;
+			sourceTree = "<group>";
+		};
+		D31753B01C5D0BBC0096C5AA /* QaleidospaceViewerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D31753B11C5D0BBC0096C5AA /* QaleidospaceViewerUITests.swift */,
+				D31753B31C5D0BBC0096C5AA /* Info.plist */,
+			);
+			path = QaleidospaceViewerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D317538D1C5D0BBC0096C5AA /* QaleidospaceViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D31753B61C5D0BBC0096C5AA /* Build configuration list for PBXNativeTarget "QaleidospaceViewer" */;
+			buildPhases = (
+				D317538A1C5D0BBC0096C5AA /* Sources */,
+				D317538B1C5D0BBC0096C5AA /* Frameworks */,
+				D317538C1C5D0BBC0096C5AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QaleidospaceViewer;
+			productName = QaleidospaceViewer;
+			productReference = D317538E1C5D0BBC0096C5AA /* QaleidospaceViewer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D31753A11C5D0BBC0096C5AA /* QaleidospaceViewerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D31753B91C5D0BBC0096C5AA /* Build configuration list for PBXNativeTarget "QaleidospaceViewerTests" */;
+			buildPhases = (
+				D317539E1C5D0BBC0096C5AA /* Sources */,
+				D317539F1C5D0BBC0096C5AA /* Frameworks */,
+				D31753A01C5D0BBC0096C5AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D31753A41C5D0BBC0096C5AA /* PBXTargetDependency */,
+			);
+			name = QaleidospaceViewerTests;
+			productName = QaleidospaceViewerTests;
+			productReference = D31753A21C5D0BBC0096C5AA /* QaleidospaceViewerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D31753AC1C5D0BBC0096C5AA /* QaleidospaceViewerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D31753BC1C5D0BBC0096C5AA /* Build configuration list for PBXNativeTarget "QaleidospaceViewerUITests" */;
+			buildPhases = (
+				D31753A91C5D0BBC0096C5AA /* Sources */,
+				D31753AA1C5D0BBC0096C5AA /* Frameworks */,
+				D31753AB1C5D0BBC0096C5AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D31753AF1C5D0BBC0096C5AA /* PBXTargetDependency */,
+			);
+			name = QaleidospaceViewerUITests;
+			productName = QaleidospaceViewerUITests;
+			productReference = D31753AD1C5D0BBC0096C5AA /* QaleidospaceViewerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D31753861C5D0BBC0096C5AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Manabu Inoue";
+				TargetAttributes = {
+					D317538D1C5D0BBC0096C5AA = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					D31753A11C5D0BBC0096C5AA = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = D317538D1C5D0BBC0096C5AA;
+					};
+					D31753AC1C5D0BBC0096C5AA = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = D317538D1C5D0BBC0096C5AA;
+					};
+				};
+			};
+			buildConfigurationList = D31753891C5D0BBC0096C5AA /* Build configuration list for PBXProject "QaleidospaceViewer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D31753851C5D0BBC0096C5AA;
+			productRefGroup = D317538F1C5D0BBC0096C5AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D317538D1C5D0BBC0096C5AA /* QaleidospaceViewer */,
+				D31753A11C5D0BBC0096C5AA /* QaleidospaceViewerTests */,
+				D31753AC1C5D0BBC0096C5AA /* QaleidospaceViewerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D317538C1C5D0BBC0096C5AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D317539C1C5D0BBC0096C5AA /* LaunchScreen.storyboard in Resources */,
+				D31753991C5D0BBC0096C5AA /* Assets.xcassets in Resources */,
+				D31753971C5D0BBC0096C5AA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D31753A01C5D0BBC0096C5AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D31753AB1C5D0BBC0096C5AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D317538A1C5D0BBC0096C5AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D31753941C5D0BBC0096C5AA /* ViewController.swift in Sources */,
+				D31753921C5D0BBC0096C5AA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D317539E1C5D0BBC0096C5AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D31753A71C5D0BBC0096C5AA /* QaleidospaceViewerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D31753A91C5D0BBC0096C5AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D31753B21C5D0BBC0096C5AA /* QaleidospaceViewerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D31753A41C5D0BBC0096C5AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D317538D1C5D0BBC0096C5AA /* QaleidospaceViewer */;
+			targetProxy = D31753A31C5D0BBC0096C5AA /* PBXContainerItemProxy */;
+		};
+		D31753AF1C5D0BBC0096C5AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D317538D1C5D0BBC0096C5AA /* QaleidospaceViewer */;
+			targetProxy = D31753AE1C5D0BBC0096C5AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D31753951C5D0BBC0096C5AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D31753961C5D0BBC0096C5AA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D317539A1C5D0BBC0096C5AA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D317539B1C5D0BBC0096C5AA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D31753B41C5D0BBC0096C5AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D31753B51C5D0BBC0096C5AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D31753B71C5D0BBC0096C5AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = QaleidospaceViewer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.self.QaleidospaceViewer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D31753B81C5D0BBC0096C5AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = QaleidospaceViewer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.self.QaleidospaceViewer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D31753BA1C5D0BBC0096C5AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = QaleidospaceViewerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.self.QaleidospaceViewerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QaleidospaceViewer.app/QaleidospaceViewer";
+			};
+			name = Debug;
+		};
+		D31753BB1C5D0BBC0096C5AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = QaleidospaceViewerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.self.QaleidospaceViewerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QaleidospaceViewer.app/QaleidospaceViewer";
+			};
+			name = Release;
+		};
+		D31753BD1C5D0BBC0096C5AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = QaleidospaceViewerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.self.QaleidospaceViewerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = QaleidospaceViewer;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		D31753BE1C5D0BBC0096C5AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = QaleidospaceViewerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.self.QaleidospaceViewerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = QaleidospaceViewer;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D31753891C5D0BBC0096C5AA /* Build configuration list for PBXProject "QaleidospaceViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D31753B41C5D0BBC0096C5AA /* Debug */,
+				D31753B51C5D0BBC0096C5AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D31753B61C5D0BBC0096C5AA /* Build configuration list for PBXNativeTarget "QaleidospaceViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D31753B71C5D0BBC0096C5AA /* Debug */,
+				D31753B81C5D0BBC0096C5AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D31753B91C5D0BBC0096C5AA /* Build configuration list for PBXNativeTarget "QaleidospaceViewerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D31753BA1C5D0BBC0096C5AA /* Debug */,
+				D31753BB1C5D0BBC0096C5AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D31753BC1C5D0BBC0096C5AA /* Build configuration list for PBXNativeTarget "QaleidospaceViewerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D31753BD1C5D0BBC0096C5AA /* Debug */,
+				D31753BE1C5D0BBC0096C5AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D31753861C5D0BBC0096C5AA /* Project object */;
+}
