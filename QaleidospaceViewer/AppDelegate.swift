@@ -1,21 +1,21 @@
-//
-//  AppDelegate.swift
-//  QaleidospaceViewer
-//
-//  Created by learn on 2016/01/31.
-//  Copyright © 2016年 Manabu Inoue. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    let appContext = ApplicationContext()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        if let navigation = window?.rootViewController as? UINavigationController,
+            let root = navigation.topViewController as? ApplicationContextSettable {
+                root.appContext = appContext
+        } else {
+            fatalError("Unexpected view controller hierarchy")
+        }
         return true
     }
 

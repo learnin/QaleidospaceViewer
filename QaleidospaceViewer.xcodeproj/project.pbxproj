@@ -15,6 +15,9 @@
 		D317539C1C5D0BBC0096C5AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D317539A1C5D0BBC0096C5AA /* LaunchScreen.storyboard */; };
 		D31753A71C5D0BBC0096C5AA /* QaleidospaceViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31753A61C5D0BBC0096C5AA /* QaleidospaceViewerTests.swift */; };
 		D31753B21C5D0BBC0096C5AA /* QaleidospaceViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31753B11C5D0BBC0096C5AA /* QaleidospaceViewerUITests.swift */; };
+		D364261E1C65E38A0052D76E /* Qaleidospace.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364261D1C65E38A0052D76E /* Qaleidospace.swift */; };
+		D36426201C65F03B0052D76E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364261F1C65F03B0052D76E /* APIManager.swift */; };
+		D36426221C663F420052D76E /* ApplicationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36426211C663F420052D76E /* ApplicationContext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		D31753AD1C5D0BBC0096C5AA /* QaleidospaceViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QaleidospaceViewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D31753B11C5D0BBC0096C5AA /* QaleidospaceViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QaleidospaceViewerUITests.swift; sourceTree = "<group>"; };
 		D31753B31C5D0BBC0096C5AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D364261D1C65E38A0052D76E /* Qaleidospace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Qaleidospace.swift; sourceTree = "<group>"; };
+		D364261F1C65F03B0052D76E /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		D36426211C663F420052D76E /* ApplicationContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationContext.swift; sourceTree = "<group>"; };
 		DC16576468C098142BB9C90E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -127,6 +133,9 @@
 				D31753981C5D0BBC0096C5AA /* Assets.xcassets */,
 				D317539A1C5D0BBC0096C5AA /* LaunchScreen.storyboard */,
 				D317539D1C5D0BBC0096C5AA /* Info.plist */,
+				D364261D1C65E38A0052D76E /* Qaleidospace.swift */,
+				D364261F1C65F03B0052D76E /* APIManager.swift */,
+				D36426211C663F420052D76E /* ApplicationContext.swift */,
 			);
 			path = QaleidospaceViewer;
 			sourceTree = "<group>";
@@ -331,8 +340,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D364261E1C65E38A0052D76E /* Qaleidospace.swift in Sources */,
+				D36426221C663F420052D76E /* ApplicationContext.swift in Sources */,
 				D31753941C5D0BBC0096C5AA /* ViewController.swift in Sources */,
 				D31753921C5D0BBC0096C5AA /* AppDelegate.swift in Sources */,
+				D36426201C65F03B0052D76E /* APIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
