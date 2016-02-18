@@ -142,12 +142,12 @@ public enum JSONDecodeError: ErrorType, CustomDebugStringConvertible {
 public struct ListResult<ItemType: JSONDecodable>: JSONDecodable {
     public let name: String
     public let count: Int
-//    public let frequency: String
-//    public let version: Int
-//    public let newdata: Bool
-//    public let lastrunstatus: String
-//    public let thisversionstatus: String
-//    public let thisversionrun: String
+    public let frequency: String
+    public let version: Int
+    public let newdata: Bool
+    public let lastrunstatus: String
+    public let thisversionstatus: String
+    public let thisversionrun: String
     public let items: [ItemType]
     
     /**
@@ -159,12 +159,12 @@ public struct ListResult<ItemType: JSONDecodable>: JSONDecodable {
     public init(JSON: JSONObject) throws {
         self.name = try getValue(JSON, key: "name")
         self.count = try getValue(JSON, key: "count")
-//        self.frequency = try getValue(JSON, key: "frequency")
-//        self.version = try getValue(JSON, key: "version")
-//        self.newdata = try getValue(JSON, key: "newdata")
-//        self.lastrunstatus = try getValue(JSON, key: "lastrunstatus")
-//        self.thisversionstatus = try getValue(JSON, key: "thisversionstatus")
-//        self.thisversionrun = try getValue(JSON, key: "thisversionrun")
+        self.frequency = try getValue(JSON, key: "frequency")
+        self.version = try getValue(JSON, key: "version")
+        self.newdata = try getValue(JSON, key: "newdata")
+        self.lastrunstatus = try getValue(JSON, key: "lastrunstatus")
+        self.thisversionstatus = try getValue(JSON, key: "thisversionstatus")
+        self.thisversionrun = try getValue(JSON, key: "thisversionrun")
         let results: JSONObject = try getValue(JSON, key: "results")
         self.items = try (getValue(results, key: "collection1") as [JSONObject]).mapWithRethrow { return try ItemType(JSON: $0) }
     }
@@ -179,7 +179,7 @@ public struct Item: JSONDecodable {
     public let title: Title
     public let date: String
     public let point: String
-//    public let tags: [String]
+    public let tags: AnyObject
     public let index: Int
     public let URL: NSURL
     
@@ -195,7 +195,7 @@ public struct Item: JSONDecodable {
         self.title = try Title(JSON: getValue(JSON, key: "title") as JSONObject)
         self.date = try getValue(JSON, key: "date")
         self.point = try getValue(JSON, key: "point")
-//        self.tags = try getValue(JSON, key: "tags") as [String]
+        self.tags = try getValue(JSON, key: "tags") as AnyObject
         self.index = try getValue(JSON, key: "index")
         self.URL = try getURL(JSON, key: "url")
     }
