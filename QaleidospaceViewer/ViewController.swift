@@ -36,7 +36,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCellWithIdentifier("ItemCell", forIndexPath: indexPath)
         
         let item = apiManager!.results[indexPath.row]
-        cell.textLabel?.text = item.title.text
+        cell.textLabel?.text = item.title
 //        cell.detailTextLabel?.text = item.title.href.absoluteString
         return cell
     }

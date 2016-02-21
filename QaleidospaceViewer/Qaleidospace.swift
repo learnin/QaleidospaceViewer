@@ -43,13 +43,13 @@ public enum APIError: ErrorType {
     case UnexpectedResponse
 }
 
-/** Qaleidospace API created with kimonolabs
+/** Qaleidospace API created with Import.io
  - SeeAlso: Qaleidospace http://qaleido.space/
-            API created with kimonolabs https://www.kimonolabs.com/api/8kpa43zk
+            API created with Import.io
  */
 public class QaleidospaceAPI {
     private let HTTPSessionManager: AFHTTPSessionManager = {
-        let manager = AFHTTPSessionManager(baseURL: NSURL(string: "https://www.kimonolabs.com/"))
+        let manager = AFHTTPSessionManager(baseURL: NSURL(string: "https://api.import.io/"))
         return manager
     }()
     
@@ -93,10 +93,13 @@ public class QaleidospaceAPI {
     - list API
     */
     public struct List: APIEndpoint {
-        public var path = "api/8kpa43zk"
+        public var path = "store/connector/ccb22dfb-1b72-424a-90ba-640186f14406/_query"
         public var method = HTTPMethod.Get
         public var parameters: Parameters {
-            return [:]
+            return [
+                "input": "webpage/url:http://qaleido.space/?type=7hours",
+                "_apikey": "",
+            ]
         }
         public typealias ResponseType = ListResult<Item>
     }
@@ -140,14 +143,7 @@ public enum JSONDecodeError: ErrorType, CustomDebugStringConvertible {
  List result data
  */
 public struct ListResult<ItemType: JSONDecodable>: JSONDecodable {
-    public let name: String
     public let count: Int
-    public let frequency: String
-    public let version: Int
-    public let newdata: Bool
-    public let lastrunstatus: String
-    public let thisversionstatus: String
-    public let thisversionrun: String
     public let items: [ItemType]
     
     /**
@@ -157,16 +153,9 @@ public struct ListResult<ItemType: JSONDecodable>: JSONDecodable {
      - Returns: SearchResult
      */
     public init(JSON: JSONObject) throws {
-        self.name = try getValue(JSON, key: "name")
-        self.count = try getValue(JSON, key: "count")
-        self.frequency = try getValue(JSON, key: "frequency")
-        self.version = try getValue(JSON, key: "version")
-        self.newdata = try getValue(JSON, key: "newdata")
-        self.lastrunstatus = try getValue(JSON, key: "lastrunstatus")
-        self.thisversionstatus = try getValue(JSON, key: "thisversionstatus")
-        self.thisversionrun = try getValue(JSON, key: "thisversionrun")
-        let results: JSONObject = try getValue(JSON, key: "results")
-        self.items = try (getValue(results, key: "collection1") as [JSONObject]).mapWithRethrow { return try ItemType(JSON: $0) }
+        self.items = try (getValue(JSON, key: "results") as [JSONObject]).mapWithRethrow { return try ItemType(JSON: $0) }
+        self.count = self.items.count
+        
     }
 }
 
@@ -175,13 +164,13 @@ public struct ListResult<ItemType: JSONDecodable>: JSONDecodable {
  */
 public struct Item: JSONDecodable {
     public let no: String
-    public let userIcon: UserIcon
-    public let title: Title
+    public let userIconURL: NSURL
+    public let userIconAlt: String
+    public let title: String
+    public let URL: NSURL
     public let date: String
     public let point: String
     public let tags: AnyObject
-    public let index: Int
-    public let URL: NSURL
     
     /**
      Initialize from JSON object
@@ -191,56 +180,16 @@ public struct Item: JSONDecodable {
      */
     public init(JSON: JSONObject) throws {
         self.no = try getValue(JSON, key: "no")
-        self.userIcon = try UserIcon(JSON: getValue(JSON, key: "userIcon") as JSONObject)
-        self.title = try Title(JSON: getValue(JSON, key: "title") as JSONObject)
+        self.userIconURL = try getURL(JSON, key: "user_icon")
+        self.userIconAlt = try getValue(JSON, key: "user_icon/_alt")
+        self.title = try getValue(JSON, key: "title/_text")
+        self.URL = try getURL(JSON, key: "title")
         self.date = try getValue(JSON, key: "date")
         self.point = try getValue(JSON, key: "point")
         self.tags = try getValue(JSON, key: "tags") as AnyObject
-        self.index = try getValue(JSON, key: "index")
-        self.URL = try getURL(JSON, key: "url")
+        
     }
 }
-
-/**
- UserIcon data
- */
-public struct UserIcon: JSONDecodable {
-    public let alt: String
-    public let src: NSURL
-    public let text: String
-    
-    /**
-     Initialize from JSON object
-     - Parameter JSON: JSON object
-     - Throws: JSONDecodeError
-     - Returns: SearchResult
-     */
-    public init(JSON: JSONObject) throws {
-        self.alt = try getValue(JSON, key: "alt")
-        self.src = try getURL(JSON, key: "src")
-        self.text = try getValue(JSON, key: "text")
-    }
-}
-
-/**
- Title data
- */
-public struct Title: JSONDecodable {
-    public let href: NSURL
-    public let text: String
-    
-    /**
-     Initialize from JSON object
-     - Parameter JSON: JSON object
-     - Throws: JSONDecodeError
-     - Returns: SearchResult
-     */
-    public init(JSON: JSONObject) throws {
-        self.href = try getURL(JSON, key: "href")
-        self.text = try getValue(JSON, key: "text")
-    }
-}
-
 
 // MARK: - Utilities
 
