@@ -41,11 +41,42 @@
                     <navigationItem key="navigationItem" title="list" id="Xbt-28-DXN"/>
                     <connections>
                         <outlet property="tableView" destination="88z-XR-8ru" id="dhH-AV-nUE"/>
+                        <segue destination="FGe-p2-tKM" kind="show" identifier="toDetail" action="showDetailViewController:sender:" id="lon-HP-sgu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1230" y="330"/>
+            <point key="canvasLocation" x="1133" y="330"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="tSL-dQ-U3F">
+            <objects>
+                <viewController id="FGe-p2-tKM" customClass="DetailViewController" customModule="QaleidospaceViewer" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a1g-PA-hJJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="aiJ-QW-67Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CcO-VC-RR3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YWg-Yv-bTm">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="FGe-p2-tKM" id="6ns-F6-0N3"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="YWg-Yv-bTm" id="y4k-aO-Ka3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fKJ-aV-iBN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1794" y="330"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9NW-0K-xn9">

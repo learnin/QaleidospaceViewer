@@ -37,8 +37,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let item = apiManager!.results[indexPath.row]
         cell.textLabel?.text = item.title
-//        cell.detailTextLabel?.text = item.title.href.absoluteString
         return cell
+    }
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let item = apiManager!.results[indexPath.row]
+        performSegueWithIdentifier("toDetail", sender: item.URL)
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "toDetail") {
+            let viewController : DetailViewController = segue.destinationViewController as! DetailViewController
+            viewController.url = sender! as! NSURL
+        }
     }
     
     // MARK: - Table view delegate
