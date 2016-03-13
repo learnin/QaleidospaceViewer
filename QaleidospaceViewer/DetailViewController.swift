@@ -16,6 +16,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.webView.delegate = self
         self.webView.scalesPageToFit = true
         self.webView.scrollView.directionalLockEnabled = false
@@ -46,6 +47,11 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
         self.fastForwardButton.enabled = self.webView!.canGoForward
         self.refreshButton.enabled = false
         self.openInSafari.enabled = false
+    }
+    
+    // ナビゲーションバーの"< Back"ボタンの処理
+    @IBAction func onClickBackButton(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     // ツールバーを生成する

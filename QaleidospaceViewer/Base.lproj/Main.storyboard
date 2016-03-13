@@ -67,9 +67,23 @@
                                     <outlet property="delegate" destination="FGe-p2-tKM" id="6ns-F6-0N3"/>
                                 </connections>
                             </webView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cSy-QT-olO">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem id="jNA-g8-bJv">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="H9E-Ce-P5X">
+                                            <connections>
+                                                <action selector="onClickBackButton:" destination="FGe-p2-tKM" id="TfF-Rc-N8y"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="webView" destination="YWg-Yv-bTm" id="y4k-aO-Ka3"/>
                     </connections>
