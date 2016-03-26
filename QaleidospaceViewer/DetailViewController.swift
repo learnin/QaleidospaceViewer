@@ -12,6 +12,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
     var rewindButton = UIBarButtonItem()
     var fastForwardButton = UIBarButtonItem()
     var refreshButton = UIBarButtonItem()
+    var shareButton = UIBarButtonItem()
     var openInSafari = UIBarButtonItem()
     
     override func viewDidLoad() {
@@ -46,6 +47,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
         // 次のページに進めるかどうか
         self.fastForwardButton.enabled = self.webView!.canGoForward
         self.refreshButton.enabled = false
+        self.shareButton.enabled = false
         self.openInSafari.enabled = false
     }
     
@@ -73,13 +75,14 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
         // 各ボタンを生成する
         // UIBarButtonItem(style, デリゲートのターゲットを指定, ボタンが押されたときに呼ばれるメソッドを指定)
         let spacer: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
-        self.rewindButton = UIBarButtonItem(barButtonSystemItem: .Rewind, target: self, action: "back:")
-        self.fastForwardButton = UIBarButtonItem(barButtonSystemItem: .FastForward, target: self, action: "forward:")
-        self.refreshButton = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: "refresh:")
-        self.openInSafari = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "safari:")
+        self.rewindButton = UIBarButtonItem(barButtonSystemItem: .Rewind, target: self, action: #selector(DetailViewController.back(_:)))
+        self.fastForwardButton = UIBarButtonItem(barButtonSystemItem: .FastForward, target: self, action: #selector(DetailViewController.forward(_:)))
+        self.refreshButton = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: #selector(DetailViewController.refresh(_:)))
+        self.shareButton = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(DetailViewController.share(_:)))
+        self.openInSafari = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(DetailViewController.safari(_:)))
         
         // ボタンをツールバーに入れる.
-        _toolBar.items = [rewindButton, fastForwardButton, refreshButton, spacer, openInSafari]
+        _toolBar.items = [rewindButton, fastForwardButton, refreshButton, spacer, shareButton, openInSafari]
         
         return _toolBar
     }
@@ -91,6 +94,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
         self.rewindButton.enabled = self.webView!.canGoBack
         self.fastForwardButton.enabled = self.webView!.canGoForward
         self.refreshButton.enabled = true
+        self.shareButton.enabled = true
         self.openInSafari.enabled = true
     }
     
@@ -116,6 +120,29 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
     // 再読み込みボタンの処理
     @IBAction func refresh(_: AnyObject) {
         self.webView?.reload()
+    }
+    
+    // Shareボタンの処理
+    @IBAction func share(sender: UIBarButtonItem) {
+        let activityItems = [
+            self.webView.request!.URL!
+        ]
+        let excludedActivityTypes = [
+            UIActivityTypePrint,
+            UIActivityTypeAssignToContact,
+            UIActivityTypeSaveToCameraRoll,
+            UIActivityTypeAirDrop,
+            UIActivityTypeMail,
+            UIActivityTypeMessage
+        ]
+        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        activityVC.excludedActivityTypes = excludedActivityTypes
+        
+        // ipad向けの設定
+        if let presenter = activityVC.popoverPresentationController {
+            presenter.barButtonItem = sender
+        }
+        self.presentViewController(activityVC, animated: true, completion: nil)
     }
     
     // safari で開く
