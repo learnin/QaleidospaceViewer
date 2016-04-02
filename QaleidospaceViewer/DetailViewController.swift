@@ -13,7 +13,6 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
     var fastForwardButton = UIBarButtonItem()
     var refreshButton = UIBarButtonItem()
     var shareButton = UIBarButtonItem()
-    var openInSafari = UIBarButtonItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +47,6 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
         self.fastForwardButton.enabled = self.webView!.canGoForward
         self.refreshButton.enabled = false
         self.shareButton.enabled = false
-        self.openInSafari.enabled = false
     }
     
     // ナビゲーションバーの"< Back"ボタンの処理
@@ -79,10 +77,9 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
         self.fastForwardButton = UIBarButtonItem(barButtonSystemItem: .FastForward, target: self, action: #selector(DetailViewController.forward(_:)))
         self.refreshButton = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: #selector(DetailViewController.refresh(_:)))
         self.shareButton = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(DetailViewController.share(_:)))
-        self.openInSafari = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(DetailViewController.safari(_:)))
         
         // ボタンをツールバーに入れる.
-        _toolBar.items = [rewindButton, fastForwardButton, refreshButton, spacer, shareButton, openInSafari]
+        _toolBar.items = [rewindButton, fastForwardButton, refreshButton, spacer, shareButton]
         
         return _toolBar
     }
@@ -95,7 +92,6 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
         self.fastForwardButton.enabled = self.webView!.canGoForward
         self.refreshButton.enabled = true
         self.shareButton.enabled = true
-        self.openInSafari.enabled = true
     }
     
     // WebView がコンテンツの読み込みを完了した後に呼ばれる
@@ -127,6 +123,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
         let activityItems = [
             self.webView.request!.URL!
         ]
+        let activities = [SafariUIActivity()]
         let excludedActivityTypes = [
             UIActivityTypePrint,
             UIActivityTypeAssignToContact,
@@ -135,7 +132,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
             UIActivityTypeMail,
             UIActivityTypeMessage
         ]
-        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: activities)
         activityVC.excludedActivityTypes = excludedActivityTypes
         
         // ipad向けの設定
@@ -143,12 +140,6 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
             presenter.barButtonItem = sender
         }
         self.presentViewController(activityVC, animated: true, completion: nil)
-    }
-    
-    // safari で開く
-    @IBAction func safari(_: AnyObject) {
-        let url = self.webView?.request?.URL
-        UIApplication.sharedApplication().openURL(url!)
     }
     
     override func didReceiveMemoryWarning() {
