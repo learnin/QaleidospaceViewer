@@ -21,6 +21,8 @@
 		D36DBD941CA01F1A00748862 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36DBD931CA01F1A00748862 /* CustomCell.swift */; };
 		D37BF0281CAF4DEF008D47F8 /* SafariUIActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37BF0271CAF4DEF008D47F8 /* SafariUIActivity.swift */; };
 		D390987A1C81E3F50005C469 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39098791C81E3F50005C469 /* DetailViewController.swift */; };
+		D3EBBB9B1CB94CCB003D954F /* PocketUIActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EBBB9A1CB94CCB003D954F /* PocketUIActivity.swift */; };
+		D3EBBB9D1CB94FEA003D954F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EBBB9C1CB94FEA003D954F /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		D36DBD931CA01F1A00748862 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		D37BF0271CAF4DEF008D47F8 /* SafariUIActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariUIActivity.swift; sourceTree = "<group>"; };
 		D39098791C81E3F50005C469 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D3EBBB9A1CB94CCB003D954F /* PocketUIActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PocketUIActivity.swift; sourceTree = "<group>"; };
+		D3EBBB9C1CB94FEA003D954F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DC16576468C098142BB9C90E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -70,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3EBBB9D1CB94FEA003D954F /* Security.framework in Frameworks */,
 				104583228707FB452387A349 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +99,7 @@
 		1DA893B4D48862B3E8A9D6D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3EBBB9C1CB94FEA003D954F /* Security.framework */,
 				DC16576468C098142BB9C90E /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -145,6 +151,7 @@
 				D364261F1C65F03B0052D76E /* APIManager.swift */,
 				D36426211C663F420052D76E /* ApplicationContext.swift */,
 				D37BF0271CAF4DEF008D47F8 /* SafariUIActivity.swift */,
+				D3EBBB9A1CB94CCB003D954F /* PocketUIActivity.swift */,
 			);
 			path = QaleidospaceViewer;
 			sourceTree = "<group>";
@@ -238,6 +245,7 @@
 				TargetAttributes = {
 					D317538D1C5D0BBC0096C5AA = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = C4Z6248CSH;
 					};
 					D31753A11C5D0BBC0096C5AA = {
 						CreatedOnToolsVersion = 7.2;
@@ -357,6 +365,7 @@
 				D36DBD941CA01F1A00748862 /* CustomCell.swift in Sources */,
 				D37BF0281CAF4DEF008D47F8 /* SafariUIActivity.swift in Sources */,
 				D36426201C65F03B0052D76E /* APIManager.swift in Sources */,
+				D3EBBB9B1CB94CCB003D954F /* PocketUIActivity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,10 +506,13 @@
 			baseConfigurationReference = 2F8E7DECFE17DFCA05945EB1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = QaleidospaceViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.learnin.QaleidospaceViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -509,10 +521,13 @@
 			baseConfigurationReference = 3AF2B229FC81F223F3D35F93 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = QaleidospaceViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.learnin.QaleidospaceViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

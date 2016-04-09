@@ -123,7 +123,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
         let activityItems = [
             self.webView.request!.URL!
         ]
-        let activities = [SafariUIActivity()]
+        let activities = [SafariUIActivity(), PocketUIActivity()]
         let excludedActivityTypes = [
             UIActivityTypePrint,
             UIActivityTypeAssignToContact,
