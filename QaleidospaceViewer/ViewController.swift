@@ -45,6 +45,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let item = apiManager!.results[indexPath.row]
         cell.customLabel.text = item.title
+        cell.userName.text = item.userIconAlt
         return cell
     }
 
