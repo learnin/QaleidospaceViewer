@@ -28,7 +28,7 @@ class APIManager {
             return false
         }
         networking = true
-        qaleidospaceAPI.request(QaleidospaceAPI.List()) { (task, response, error) in
+        qaleidospaceAPI.request(QaleidospaceAPI.List()) { (response, error) in
             if let response = response {
                 if reload {
                     self.results.removeAll()

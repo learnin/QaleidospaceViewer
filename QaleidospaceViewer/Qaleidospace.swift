@@ -1,6 +1,6 @@
 import Foundation
 
-import AFNetworking
+import Alamofire
 
 public typealias JSONObject = [String: AnyObject]
 
@@ -48,47 +48,38 @@ public enum APIError: ErrorType {
             API created with Import.io
  */
 public class QaleidospaceAPI {
-    private let HTTPSessionManager: AFHTTPSessionManager = {
-        let manager = AFHTTPSessionManager(baseURL: NSURL(string: "https://api.import.io/"))
-        return manager
-    }()
-    
     /**
-     Perform HTTP request for any endpoints.
+     Perform HTTP request.
      - Parameters:
      - endpoint: API endpoint.
      - handler:  Request results handler.
      */
-    public func request<Endpoint: APIEndpoint>(endpoint: Endpoint, handler: (task: NSURLSessionDataTask, response: Endpoint.ResponseType?, error: ErrorType?) -> Void) {
-        let success = { (task: NSURLSessionDataTask!, response: AnyObject?) -> Void in
-            if let JSON = response as? JSONObject {
-                do {
-                    let response = try Endpoint.ResponseType(JSON: JSON)
-                    handler(task: task, response: response, error: nil)
-                } catch {
-                    handler(task: task, response: nil, error: error)
-                }
-            } else {
-                handler(task: task, response: nil, error: APIError.UnexpectedResponse)
-            }
-        }
-        let failure = { (task: NSURLSessionDataTask?, var error: NSError) -> Void in
-            // If the error has any data, put it into "localized failure reason"
-            if let errorData = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as? NSData,
-                let errorDescription = NSString(data: errorData, encoding: NSUTF8StringEncoding) {
-                    var userInfo = error.userInfo
-                    userInfo[NSLocalizedFailureReasonErrorKey] = errorDescription
-                    error = NSError(domain: error.domain, code: error.code, userInfo: userInfo)
-            }
-            handler(task: task!, response: nil, error: error)
-        }
-        
+    public func request<Endpoint: APIEndpoint>(endpoint: Endpoint, handler: (response: Endpoint.ResponseType?, error: ErrorType?) -> Void) {
         switch endpoint.method {
         case .Get:
-            HTTPSessionManager.GET(endpoint.path, parameters: endpoint.parameters.dictionary, progress: nil, success: success, failure: failure)
+            Alamofire.request(.GET, "https://api.import.io/" + endpoint.path, parameters: endpoint.parameters.dictionary)
+                .validate(statusCode: 200..<300)
+                .validate(contentType: ["application/json"])
+                .responseJSON { response in
+                    switch response.result {
+                    case .Success(let value):
+                        if let JSON = value as? JSONObject {
+                            do {
+                                let res = try Endpoint.ResponseType(JSON: JSON)
+                                handler(response: res, error: nil)
+                            } catch {
+                                handler(response: nil, error: error)
+                            }
+                        } else {
+                            handler(response: nil, error: APIError.UnexpectedResponse)
+                        }
+                    case .Failure(let error):
+                        handler(response: nil, error: error)
+                    }
+            }
         }
     }
-    
+
     /**
     - list API
     */
