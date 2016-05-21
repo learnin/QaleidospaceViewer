@@ -57,7 +57,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "toDetail") {
             let viewController : DetailViewController = segue.destinationViewController as! DetailViewController
-            viewController.url = sender! as! NSURL
+            viewController.url = sender! as? NSURL
         }
     }
     
